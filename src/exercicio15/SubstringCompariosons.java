@@ -3,15 +3,20 @@ package exercicio15;
 import java.util.Scanner;
 
 public class SubstringCompariosons {
-
-    //Goal: Separar a cada 3 letras e colocar em ordem alfabetica
-
     public static String getSmallestAndLargest(String s, int k) {
-        String test = s.substring(0,k);
-        String smallest = "";
-        String largest = "";
+        String current = s.substring(0, k);
+        String smallest = current;
+        String largest = current;
 
-
+        for(int i = 1; i <= s.length() - k; i++){
+            current = s.substring(i, i+k);
+            if(current.compareTo(largest) > 0) {
+                largest = current;
+            }
+            if(current.compareTo(largest) < 0) {
+                smallest = current;
+            }
+        }
         return smallest + "\n" + largest;
     }
 
