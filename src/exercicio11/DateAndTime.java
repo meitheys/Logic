@@ -10,7 +10,6 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class DateAndTime {
-
     public static String findDay(int month, int day, int year) {
 
         Calendar cal = Calendar.getInstance();
@@ -45,7 +44,4 @@ public class DateAndTime {
         bufferedReader.close();
         bufferedWriter.close();
     }
-
-
-
 }
