@@ -8,6 +8,8 @@ public class SubstringCompariosons {
         String smallest = current;
         String largest = current;
 
+        //https://www.guj.com.br/t/usando-compareto/132830
+
         for(int i = 1; i <= s.length() - k; i++){
             current = s.substring(i, i+k);
             if(current.compareTo(largest) > 0) {
