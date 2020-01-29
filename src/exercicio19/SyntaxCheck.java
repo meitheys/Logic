@@ -11,16 +11,14 @@ public class SyntaxCheck {
             String pattern = in.nextLine();
             //Com isso ele entende que tem que parar o loop conforme o usuario informe um numero de linhas, não sei porque mas sem isso ele se perde.
             testCases--;
-            try
-            {
+            try {
                 //O pattern faz com que as sintaxes tenham que ser certas. Ex: "ab(" será errado pois os parenteses não foram fechados corretamente.
                 Pattern.compile(pattern);
                 System.out.println("Valid");
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Invalid");
             }
+
         }
     }
 }
