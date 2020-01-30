@@ -39,7 +39,13 @@ public class Array2D {
                 for(int j=0; j < 4; j++){
 
                     //Pega as cominações do Array para somar
-                    soma=a[i][j]+a[i][j+1]+a[i][j+2]+a[i+1][j+1]+a[i+2][j]+a[i+2][j+1]+a[i+2][j+2];
+                        soma=a[i][j]
+                            +a[i][j+1]
+                            +a[i][j+2]
+                            +a[i+1][j+1]
+                            +a[i+2][j]
+                            +a[i+2][j+1]
+                            +a[i+2][j+2];
 
                     if(soma>maiorSoma) maiorSoma=soma;
                 }
