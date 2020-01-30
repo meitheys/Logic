@@ -15,7 +15,7 @@ public class SubstringCompariosons {
             if(current.compareTo(largest) > 0) {
                 largest = current;
             }
-            if(current.compareTo(largest) < 0) {
+            if(current.compareTo(smallest) < 0) {
                 smallest = current;
             }
         }

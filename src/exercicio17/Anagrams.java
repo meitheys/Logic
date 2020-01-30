@@ -7,6 +7,7 @@ public class Anagrams {
         int aLength = A.length();
         int bLength = B.length();
 
+        //Ve se tem a mesma quantidade de digitos.
         if (aLength != bLength)
             return false;
 
@@ -17,7 +18,10 @@ public class Anagrams {
         //26 para toda letra do alfabeto
         int[] charF = new int[26];
 
+        //https://web.fe.up.pt/~ee96100/projecto/Tabela%20ascii.htm <------------- ASCII
         //Loopa entre o Array do Alfabeto
+
+        //Verifica se tal palavra tem tal letra: Ex: "gato", verifica se tem A,B,C,D,E,F... E se a 2 palavra também tem, por exemplo: "AGTO"
         for (int i = 0; i < aLength; i++) {
             char current = A.charAt(i);
             int index = current - 'a';
