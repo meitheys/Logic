@@ -9,10 +9,9 @@ public class JStack {
         while (sc.hasNext()) {
             String input = sc.next();
 
-
-
-
-
+            //This regex matches "[],{},()"
+            while(input.length() != (input = input.replaceAll("\\(\\)|\\[\\]|\\{\\}", "")).length());
+            System.out.println(input.isEmpty());
         }
     }
 }
