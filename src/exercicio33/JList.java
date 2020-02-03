@@ -19,6 +19,7 @@ public class JList {
 
         for (int i = 0; i < n2; i++) {
             String ac = scan.next();
+            //Se String for "Insert", insere novos dados no List
             if (ac.equals("Insert")) {
                 int ix = scan.nextInt();
                 int val = scan.nextInt();

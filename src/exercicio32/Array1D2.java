@@ -1,60 +1,34 @@
 package exercicio32;
 
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+
 import java.util.Arrays;
+import java.util.IllegalFormatConversionException;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.CancellationException;
 
 public class Array1D2 {
-
-    //What to
-
-    /*
-    Ex of input
-
-    1 <---Base of how many lines will be put
-    6 <--- [6] Units that will be input in the array 5 <-- [5] is the Leap
-        ^ Explanation ->
-                        0  <-- 1
-                        0  <-- 2
-                        0  <-- 3
-                        1  <-- 4
-                        1  <-- 5
-                        1  <-- 6, so [6] six is the size of the array
-
-    0 0 0 1 1 1
-
-    So, if Leap + index = units of the end of the array
-            5   +   1   = 6
-    ^^ That's a 'YES' 'cause:
-
-    Another example:
-
-    6 3
-    0 0 1 1 1 0
-
-    3 + 1 = 4 != 6, then we say NO
-
-    */
-
-    /* INPUT
-
-    2 <--- Number os inputs
-    5 3
-    0 0 0 0 0
-
-    6 5
-    0 0 0 1 1 1
-
-     */
-
-    //Q is the Leap
-    //We need to achieve to game.length
-
     public static boolean canWin(int leap, int[] game, int i) {
-        //Se tudo for zero
-        if (i < 0 || game[i] == 1)
+
+        //Regras
+        if (leap < 0 || leap > 100) {
+            throw new IllegalArgumentException("Leap não deve ser menor que 0 ou maior que 100");
+        }
+        if (game.length < 1 || game.length > 100) {
+            throw new IllegalArgumentException("O tamanho do Array não deve ser menor que 1 ou maior que 100");
+        }
+
+        //Se I for zero, perde jogo, se posição que o jogador cair for == 1, perde jogo
+        //Fazendo verificação pedida no Hackerank, validando de game[0] == 0
+        if (i < 0 || game[i] == 1) {
             return false;
-        if (i + 1 >= game.length || i + leap >= game.length)
+        }
+
+        //Regras que o HackerRank passou
+        if (i + 1 >= game.length || i + leap >= game.length) {
             return true;
+        }
 
         game[i] = 1;
 
@@ -65,6 +39,13 @@ public class Array1D2 {
         Scanner scan = new Scanner(System.in);
         //Leap
         int q = scan.nextInt();
+
+        //Regra
+        if (q > 5000 || q < 1) {
+            throw new IllegalArgumentException("O numero de registros não deve ser menor que um e nem maior que 5000");
+        }
+
+        //Preenchendo os dados
         while (q-- > 0) {
             int n = scan.nextInt();
             int leap = scan.nextInt();
@@ -73,9 +54,8 @@ public class Array1D2 {
             for (int i = 0; i < n; i++) {
                 game[i] = scan.nextInt();
             }
-            System.out.println( (canWin(leap, game, 0)) ? "YES" : "NO" );
+            System.out.println((canWin(leap, game, 0)) ? "YES" : "NO");
         }
         scan.close();
     }
 }
-
