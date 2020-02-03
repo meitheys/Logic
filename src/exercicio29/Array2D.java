@@ -39,6 +39,7 @@ public class Array2D {
                 for(int j=0; j < 4; j++){
 
                     //Pega as cominações do Array para somar
+                    //As combinações equivalem as coordenadas da ampulheta
                         soma=a[i][j]
                             +a[i][j+1]
                             +a[i][j+2]
