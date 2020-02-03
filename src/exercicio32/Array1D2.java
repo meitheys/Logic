@@ -1,7 +1,12 @@
 package exercicio32;
 
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+
 import java.util.Arrays;
+import java.util.IllegalFormatConversionException;
+import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.CancellationException;
 
 public class Array1D2 {
     public static boolean canWin(int leap, int[] game, int i) {
