@@ -13,7 +13,7 @@ public class Array1D2 {
 
         boolean flag = false;
 
-        //Regras
+        //Regras do HackerRank
         if (leap < 0 || leap > 100) {
             throw new IllegalArgumentException("Leap não deve ser menor que 0 ou maior que 100");
         }
@@ -21,19 +21,17 @@ public class Array1D2 {
             throw new IllegalArgumentException("O tamanho do Array não deve ser menor que 1 ou maior que 100");
         }
 
-        //Se I for zero, perde jogo, se posição que o jogador cair for == 1, perde jogo
-        //Fazendo verificação pedida no Hackerank, validando de game[0] == 0
         if (i < 0 || game[i] == 1) {
             return false;
         }
 
-        //Regras que o HackerRank passou
         if (i + 1 >= game.length || i + leap >= game.length) {
             return true;
         }
 
         game[i] = 1;
 
+        //Recursividade, vai tentando chamar o método ate conseguir, se não retorna false
         return canWin(leap, game, i + leap) || canWin(leap, game, i + 1) || canWin(leap, game, i - 1);
     }
 

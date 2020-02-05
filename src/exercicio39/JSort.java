@@ -1,7 +1,5 @@
 package exercicio39;
 
-import com.sun.corba.se.spi.orbutil.fsm.FSMTest;
-
 import java.util.*;
 
 class Student {
@@ -47,10 +45,10 @@ public class JSort {
         }
 
         //Só funciona no Java 8.
+        Collections.sort(studentList,  Comparator.comparing(Student :: getCgpa).reversed().thenComparing(Student :: getFname).thenComparing(Student :: getId));
 
-        studentList.sort(Comparator.comparing(Student::getCgpa).reversed().thenComparing(Student::getFname).thenComparing(Student::getId));
-
-        studentList.forEach(System.out::println);
-
+        for (Student st : studentList) {
+            System.out.println(st.getFname());
+        }
     }
 }

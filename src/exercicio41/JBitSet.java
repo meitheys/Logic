@@ -16,6 +16,9 @@ public class JBitSet {
         for (int i = 0; i < entradas; i++) {
             String a = in.next();
             int objeto = in.nextInt();
+            if(objeto != 0 || objeto != 1){
+                throw new IllegalArgumentException("O valor informado deve corresponder a 0 ou 1!");
+            }
             int coordenada = in.nextInt();
 
             if (a.equals("AND")) {
