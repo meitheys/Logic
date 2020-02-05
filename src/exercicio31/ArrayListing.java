@@ -48,11 +48,11 @@ public class ArrayListing {
 
         */
 
-        List<List<Integer>> lines = new ArrayList<List<Integer>>();
+        List<List<Integer>> lines = new ArrayList<>();
         int n = in.nextInt();
         //Preenche o Array
         for (int i = 0; i < n; i++) {
-            List<Integer> line = new ArrayList<Integer>();
+            List<Integer> line = new ArrayList<>();
             int d = in.nextInt();
             for (int j = 0; j < d; j++) {
                 line.add(in.nextInt());
@@ -65,10 +65,10 @@ public class ArrayListing {
             int y = in.nextInt();
             //Se X estiver vazio quer dizer que não há nada para pegar, retornando erro
             // -1 pois o array inicia em 0, ou seja, quando a pessoa pedir (1, 3), na verdade é 0, 2.
-            if (y > lines.get(x - 1).size()) {
-                System.out.println("ERROR!");
-            } else {
+            try {
                 System.out.println(lines.get(x - 1).get(y - 1));
+            }catch (Exception e){
+                System.out.println("ERROR!");
             }
         }
         in.close();
