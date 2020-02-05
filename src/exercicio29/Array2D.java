@@ -35,18 +35,15 @@ public class Array2D {
                 }
             }
 
+            //O 4 é porque a hourglass vai até a 3 linha. e 3+1
             for(int i=0; i < 4; i++){
                 for(int j=0; j < 4; j++){
 
                     //Pega as cominações do Array para somar
                     //As combinações equivalem as coordenadas da ampulheta
-                        soma=a[i][j]
-                            +a[i][j+1]
-                            +a[i][j+2]
-                            +a[i+1][j+1]
-                            +a[i+2][j]
-                            +a[i+2][j+1]
-                            +a[i+2][j+2];
+                    soma=       a[i][j]   +a[i][j+1]    +a[i][j+2]
+                                          +a[i+1][j+1]
+                               +a[i+2][j] +a[i+2][j+1]  +a[i+2][j+2];
 
                     if(soma>maiorSoma) maiorSoma=soma;
                 }

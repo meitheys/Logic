@@ -13,14 +13,16 @@ public class JBitSet {
         BitSet bs1 = new BitSet(valorBitSet);
         BitSet bs2 = new BitSet(valorBitSet);
 
-
         for (int i = 0; i < entradas; i++) {
             String a = in.next();
             int objeto = in.nextInt();
             int coordenada = in.nextInt();
 
             if (a.equals("AND")) {
-                bs1.and(bs2);
+                if(objeto == 1){
+                    bs1.and(bs2);
+                }else
+                    bs2.and(bs1);
             }
 
             else if (a.equals("SET")) {
@@ -40,7 +42,10 @@ public class JBitSet {
             }
 
             else if (a.equals("XOR")) {
-                bs1.xor(bs2);
+                if (objeto == 1){
+                    bs1.xor(bs2);
+                }else
+                    bs2.xor(bs1);
             }
 
             else if (a.equals("FLIP")) {

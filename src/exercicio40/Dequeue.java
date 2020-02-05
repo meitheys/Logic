@@ -8,6 +8,40 @@ import java.util.Scanner;
 public class Dequeue {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
+        /*
+
+        5 3 5 2 3 2
+
+        5
+         3
+          5
+           2
+            3
+             2
+
+        5 3
+           3 5
+             5 2
+                2 3
+                  3 2
+
+       5 3 5
+            3 5 2
+                 5 2 3
+                      2 3 2
+
+       5 3 5 2
+              3 5 2 3
+                     5 2 3 2
+
+        5 3 5 2 3
+                 3 5 2 3 2
+
+        5 3 5 2 3 2
+
+        */
+
         Deque<Integer> deque = new ArrayDeque<>();
         HashSet<Integer> sesh = new HashSet<>();
 
@@ -17,18 +51,14 @@ public class Dequeue {
 
         for (int i = 0; i < n; i++) {
             int num = in.nextInt();
-
             deque.add(num);
             sesh.add(num);
 
             if (deque.size() == m) {
-                System.out.println(deque + " < - deque");
-                System.out.println(sesh + " <- Sesh");
-                System.out.println(deque.size() + " < - Size of the deque");    //Take it out when starting the code
-                System.out.println(sesh.size() + " <- Size of the Sesh");       //Take it out too.
                 if (sesh.size() > maxV) maxV = sesh.size();
+                //Remove 'P' do deque e coloca o mesmo em uma variavel,
                 int p = deque.remove();
-                System.out.println(p + " <-- P");
+                //Se 'P' não existe mais no Deque, remove p
                 if (!deque.contains(p)) sesh.remove(p);
             }
         }
