@@ -22,10 +22,13 @@ public class Dequeue {
             sesh.add(num);
 
             if (deque.size() == m) {
+                System.out.println(deque + " < - deque");
+                System.out.println(sesh + " <- Sesh");
                 System.out.println(deque.size() + " < - Size of the deque");    //Take it out when starting the code
                 System.out.println(sesh.size() + " <- Size of the Sesh");       //Take it out too.
                 if (sesh.size() > maxV) maxV = sesh.size();
                 int p = deque.remove();
+                System.out.println(p + " <-- P");
                 if (!deque.contains(p)) sesh.remove(p);
             }
         }

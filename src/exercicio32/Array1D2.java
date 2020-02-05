@@ -11,6 +11,8 @@ import java.util.concurrent.CancellationException;
 public class Array1D2 {
     public static boolean canWin(int leap, int[] game, int i) {
 
+        boolean flag = false;
+
         //Regras
         if (leap < 0 || leap > 100) {
             throw new IllegalArgumentException("Leap não deve ser menor que 0 ou maior que 100");

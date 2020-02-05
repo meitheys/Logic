@@ -44,6 +44,7 @@ public class JSort {
             testCases--;
         }
 
+        //Só funciona no Java 8.
         Collections.sort(studentList,  Comparator.comparing(Student :: getCgpa).reversed().thenComparing(Student :: getFname).thenComparing(Student :: getId));
 
         for (Student st : studentList) {
