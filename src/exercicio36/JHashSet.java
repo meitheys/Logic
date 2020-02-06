@@ -16,7 +16,6 @@ public class JHashSet {
         }
 
         //HashSet impede a inserção de valores duplicados ou nulos.
-
         HashSet<String> sesh = new HashSet<String>();
 
         for (int i = 0; i < t; i++) {
