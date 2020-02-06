@@ -24,7 +24,6 @@ public class JHashSet {
             //Teste p/ ver inserção -> System.out.println(sesh);
         }
 
-
         /* Errado
         //HashSet impede a entrada de elementos duplicados e nulos
         //Começando do 0 pois o HackerRank quer desde o 1 só
@@ -37,6 +36,5 @@ public class JHashSet {
 
             System.out.println(c);
         }*/
-
     }
 }

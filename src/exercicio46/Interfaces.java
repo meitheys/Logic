@@ -1,0 +1,61 @@
+package exercicio46;
+
+import java.util.*;
+
+/*What to
+
+Receiving a number, you print all their divisors
+
+like:
+
+Input 6,
+
+Divisors of 6 are: 6,3,2,1
+
+Return: 6 + 3 + 2 + 1 = 12.
+
+*/
+
+
+
+interface AdvancedArithmetic {
+    int divisor_sum(int n);
+}
+
+class MyCalculator implements AdvancedArithmetic {
+    @Override
+    public int divisor_sum(int n) {
+        int f = 1, v = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                f = i;
+                v += f;
+            }
+        }
+        return v;
+    }
+}
+
+public class Interfaces {
+    public static void main(String[] args) {
+        MyCalculator my_calculator = new MyCalculator();
+        System.out.print("I implemented: ");
+        ImplementedInterfaceNames(my_calculator);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.print(my_calculator.divisor_sum(n) + "\n");
+        sc.close();
+    }
+
+    /*
+     *  ImplementedInterfaceNames method takes an object and prints the name of the interfaces it implemented
+     */
+    static void ImplementedInterfaceNames(Object o) {
+        Class[] theInterfaces = o.getClass().getInterfaces();
+        for (int i = 0; i < theInterfaces.length; i++) {
+            String interfaceName = theInterfaces[i].getName();
+            System.out.println(interfaceName);
+        }
+    }
+}
