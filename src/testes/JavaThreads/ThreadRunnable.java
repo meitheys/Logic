@@ -9,6 +9,8 @@ import java.applet.*;
 import java.text.*;
 
 public class ThreadRunnable extends Applet implements Runnable {
+    public static final int X_PADRAO = 5;
+    private static final int Y_APLICACAO = 45;
     DateFormat formatador;
     String dataFinal;
     Date dataAtual;
@@ -24,7 +26,7 @@ public class ThreadRunnable extends Applet implements Runnable {
         formatador = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.MEDIUM, locale);
         dataAtual = new Date();
         dataFinal = formatador.format(dataAtual);
-        fonteDoNumero = new Font("Sans-Serif", Font.PLAIN, 14);
+        fonteDoNumero = new Font("Sans-Serif", Font.PLAIN, 30);
         resize(275, 25);
     }
 
@@ -55,9 +57,9 @@ public class ThreadRunnable extends Applet implements Runnable {
 
         //Re-desenhar
         g.setColor(getBackground());
-        g.drawString(dataFinal, 0, 12);
+        g.drawString(dataFinal, X_PADRAO, Y_APLICACAO);
         g.setColor(corDoNumero);
-        g.drawString(diaDeHoje, 0, 12);
+        g.drawString(diaDeHoje, X_PADRAO, Y_APLICACAO);
         dataFinal = diaDeHoje;
         dataAtual = null;
 
