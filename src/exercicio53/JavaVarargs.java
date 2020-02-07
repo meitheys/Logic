@@ -1,14 +1,19 @@
-package exercicio50;
+package exercicio53;
 
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 class Add{
-    public void add(Object... args) {
+    public void add(int... args) {
+        int somaDosNumeros = 0;
+        String separador = "";
+        for (int index : args) {
+            somaDosNumeros += index;
+            System.out.print(separador + index);
+            separador = "+";
+        }
+        System.out.println("=" + somaDosNumeros);
     }
 }
 

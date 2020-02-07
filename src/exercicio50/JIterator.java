@@ -1,4 +1,4 @@
-package exercicio48;
+package exercicio50;
 
 import java.util.*;
 

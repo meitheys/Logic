@@ -1,4 +1,4 @@
-package exercicio49;
+package exercicio51;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
