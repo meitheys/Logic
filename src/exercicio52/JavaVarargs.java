@@ -1,4 +1,4 @@
-package exercicio53;
+package exercicio52;
 
 import java.io.*;
 import java.lang.reflect.*;

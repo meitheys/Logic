@@ -3,7 +3,7 @@ package exercicio49;
 import java.util.*;
 
 class Student{}
-class Rockstar{   }
+class Rockstar{}
 class Hacker{}
 
 public class InstanceOfKeyword {
@@ -11,11 +11,14 @@ public class InstanceOfKeyword {
         int a = 0,b = 0,c = 0;
         for(int i = 0; i < mylist.size(); i++){
             Object element=mylist.get(i);
-            if(~~Complete this line~~)
+            //se elemento for do tipo Student
+            if(element instanceof Student)
             a++;
-            if(~~Complete this line~~)
+            //se elemento for do tipo Rockstar
+            if(element instanceof Rockstar)
             b++;
-            if(~~Complete this line~~)
+            //se elemento for do tipo Hacker
+            if(element instanceof Hacker)
             c++;
         }
         String ret = Integer.toString(a)+" "+ Integer.toString(b)+" "+ Integer.toString(c);

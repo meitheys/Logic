@@ -7,6 +7,7 @@ public class JIterator {
         Iterator it=mylist.iterator();
         while(it.hasNext()){
             Object element = it.next();
+            //Se elemento for String
             if(element instanceof String)
             break;
         }
