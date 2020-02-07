@@ -9,27 +9,30 @@ import java.lang.reflect.*;
 import static java.lang.System.in;
 
 class Prime {
+    void checkPrime(int... numeros) {
+        for (int num : numeros) {
+            if (isPrime(num)) {
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println();
+    }
 
-    public static boolean isPrime(long number) {
-        number = (long) Math.sqrt(number);
-        if (number % 2 == 0) {
+    boolean isPrime(int n) {
+        if (n < 2) {
+            return false;
+        } else if (n == 2) {
+            return true;
+        } else if (n % 2 == 0) {
             return false;
         }
-        for (long i = 3; i * i <= number; i += 2) {
-            if (number % i == 0) {
+        int sqrt = (int) Math.sqrt(n);
+        for (int i = 3; i <= sqrt; i += 2) {
+            if (n % i == 0) {
                 return false;
             }
         }
         return true;
-    }
-
-    public void checkPrime(int... args) {
-        for (int num : args) {
-            if (isPrime(num)) {
-                System.out.println(num + " ");
-            }
-        }
-        System.out.println();
     }
 }
 
